@@ -1,6 +1,57 @@
+// import React, { Component } from 'react'
+// import { connect } from 'react-redux'
+// import { withRouter, Route, Switch, Redirect } from 'react-router-dom'
+// import PropTypes from 'prop-types'
+// import { Home } from './components'
+
+// /**
+//  * COMPONENT
+//  */
+// class Routes extends Component {
+//   componentDidMount() {
+//     this.props.loadInitialData()
+//   }
+
+//   render() {
+
+//     return (
+//       <Switch>
+//         <Redirect to= '/home'/>
+//         <Route path="/home" component={Home} />
+//       </Switch>
+//     )
+//   }
+// }
+
+// /**
+//  * CONTAINER
+//  */
+// // const mapState = state => {
+// //   return {
+// //   }
+// // }
+
+// // const mapDispatch = dispatch => {
+// //   return {
+// //     loadInitialData() {
+// //     }
+// //   }
+// // }
+
+// // The `withRouter` wrapper makes sure that updates are not blocked
+// // when the url changes
+// export default withRouter(connect(mapState, mapDispatch)(Routes))
+
+// /**
+//  * PROP TYPES
+//  */
+// Routes.propTypes = {
+//   loadInitialData: PropTypes.func.isRequired,
+// }
+
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {withRouter, Route, Switch} from 'react-router-dom'
+import { withRouter, Route, Switch, Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {Login, Signup, UserHome} from './components'
 import {me} from './store'
@@ -24,7 +75,9 @@ class Routes extends Component {
         {isLoggedIn && (
           <Switch>
             {/* Routes placed here are only available after logging in */}
+            
             <Route path="/home" component={UserHome} />
+            <Redirect to= '/home' />
           </Switch>
         )}
         {/* Displays our Login component as a fallback */}
