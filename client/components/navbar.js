@@ -5,7 +5,6 @@ import {Link} from 'react-router-dom';
 import {logout} from '../store';
 
 const Navbar = ({handleClick, isLoggedIn}) => {
-  const {email} = props
 
   return (
     <div>
@@ -26,7 +25,7 @@ const Navbar = ({handleClick, isLoggedIn}) => {
             <Link to="/home">Home</Link>
             <Link to="/login">Login</Link>
             <Link to="/signup">Sign Up</Link>
-            <Link to="/create">Start a new Fund</Link>
+            <Link to="/signup">Start a new Fund</Link>
           </div>
         )}
       </nav>
@@ -60,5 +59,4 @@ export default connect(mapState, mapDispatch)(Navbar)
 Navbar.propTypes = {
   handleClick: PropTypes.func.isRequired,
   isLoggedIn: PropTypes.bool.isRequired,
-  email: PropTypes.string
 }
