@@ -23,6 +23,10 @@ const Fund = db.define('funds', {
   description: {
     type: Sequelize.TEXT,
     defaultValue: 'Please donate to my campaign.'
+  },
+  imageUrl: {
+    type: Sequelize.TEXT,
+    defaultValue: "" 
   }
 });
 
