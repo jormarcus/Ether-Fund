@@ -1,6 +1,6 @@
 import react from 'react';
 import { Link } from 'react-router-dom';
-import fundReducer from '../store/fund';
+import postFund from '../store/fund'; //why am i importing this
 import progressBar from './progressBar';
 
 const donateCard = props => {

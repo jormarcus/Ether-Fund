@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchFunds } from '../store/fund';
 
-class FundByCategory extends Component {
+class FundsByCategory extends Component {
   
   render() {
 
@@ -38,4 +38,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(FundByCategory);
+export default connect(mapStateToProps, mapDispatchToProps)(FundsByCategory);

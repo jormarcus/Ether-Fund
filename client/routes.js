@@ -4,7 +4,11 @@ import { withRouter, Route, Switch, Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {Login, Signup, UserHome} from './components'
 import {me} from './store'
-import createFund from './components/createFund';
+import CreateFund from './components/createFund';
+import DonatePage from './components/donatePage';
+import FundsByCategory from './components/fundsByCategory';
+import SingleFund from './singleFundPage';
+import ThankPage from './thankPage';
 
 /**
  * COMPONENT
@@ -23,12 +27,17 @@ class Routes extends Component {
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/home" component={UserHome} />
-        <Route exact path="/create" component={createFund} />
+        <Route exact path="/create" component={CreateFund} />
+        <Route exact path="/funds" component={FundsByCategory} />
+        <Route exact path="/funds/:fundId" component={SingleFund} />
+        <Route exact path="/donate" component={DonatePage} />
+        <Route exact path="/Thanks" component={ThankPage} />
+
         {isLoggedIn && (
           <Switch>
             {/* Routes placed here are only available after logging in */}
             
-            <Route exact path="/home" component={UserHome} />
+            <Route exact path="/create" component={createFund} />
             <Redirect to= '/home' />
           </Switch>
         )}

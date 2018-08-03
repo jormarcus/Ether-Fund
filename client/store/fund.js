@@ -29,7 +29,7 @@ export const fetchSingleFund = fundId => {
   }
 }
 
-export const postNewFund = () => {
+export const postFund = () => {
   return async dispatch => {
     const res = await axios.post('/api/fund');
     dispatch(addFund(res.data));
