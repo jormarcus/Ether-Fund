@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import ProgressBar from './progressBar';
 
@@ -7,15 +7,19 @@ const FundCard = props => {
 
   return (
     <div>
-      <img src={fund.imageUrl} />
-      <h4>{fund.city}{fund.state}</h4>
-      <h4>{fund.title}</h4>
+      <Link to={`/funds/${fund.id}`}>
+        <img className="card-image" src={fund.imageUrl} />
+        <h4>{fund.name}</h4>
+      </Link>
       
       <br />
       
-      <ProgressBar percentage={fund.percentage} />
+      
     </div>
   )
 }
 
 export default FundCard;
+
+
+// <ProgressBar percentage={fund.percentage} />

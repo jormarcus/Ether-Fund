@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import postFund from '../store/fund'; //why am i importing this
 import progressBar from './progressBar';

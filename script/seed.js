@@ -20,7 +20,7 @@ async function seed() {
 
     Fund.create({name: 'Training for Flurry', amount: 500, category: 'Education & Learning', description: 'Flurry knows some commands, but she is not the best listener.  She does not always come when called, she likes to steal food, and typically sits at the table during meals. Please donate so I can afford to get Flurry some training.', imageUrl: 'https://i.imgur.com/hm7iUym.jpg'}),
 
-    Fund.create({name: 'Travel Expenses for Flurry', amount: 2000, category: 'Travel & Adventure', description: 'Flurry likes to explore different parks and hike with her friends. Please sponsor her travels so she can afford to run around all over the country.', imageUrl: 'https://i.imgur.com/gVMtxib.jpg'}),
+    Fund.create({name: 'Travel Expenses for Flurry', amount: 2000, category: 'Travel & Adventure', description: 'Flurry likes to explore different parks and hike with her friends. Please sponsor her travels so she can afford to run around all over the country.', imageUrl: 'https://i.imgur.com/kAFXEpG.jpg'}),
 
     Fund.create({name: 'Snow Exploration for Flurry', amount: 1500, category: 'Travel & Adventure', description: 'Flurry loves to to play in the snow. Please help sponsor her trip to play in the snow.', imageUrl: 'https://i.imgur.com/y18dsIk.jpg'}),
 

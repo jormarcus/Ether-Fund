@@ -1,7 +1,7 @@
-import react, { Component } from 'react';
+import React, { Component } from 'react';
 import { fetchSingleFund, removeFund } from '../store/fund';
-import DonateCard from './donateSquare'
-import { connect } from 'http2';
+import DonateCard from './donateCard'
+import { connect } from 'react-redux';
 
 class SingleFund extends Component {
   constructor() {
@@ -45,13 +45,13 @@ class SingleFund extends Component {
   }
 }
 
-mapStateToProps = state => {
+const mapStateToProps = state => {
   return {
     fund: state.fundReducer.SingleFund
   }
 }
 
-mapDispatchToProps = dispatch => {
+const mapDispatchToProps = dispatch => {
   return {
     fetchSingleFund: fundId => dispatch(fetchSingleFund(fundId)),
     removeFund: fundId => dispatch(removeFund(fundId))

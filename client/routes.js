@@ -6,43 +6,33 @@ import {Login, Signup, UserHome} from './components'
 import {me} from './store'
 import CreateFund from './components/createFund';
 import DonatePage from './components/donatePage';
-import FundsByCategory from './components/fundsByCategory';
-import SingleFund from './singleFundPage';
-import ThankPage from './thankPage';
+import AllFunds from './components/allFunds';
+import SingleFund from './components/singleFundPage';
+import ThankPage from './components/thankPage';
+
+// <Route exact path="/login" component={Login} />
+// <Route exact path="/signup" component={Signup} />
+
+// <Route exact path="/donate" component={DonatePage} />
 
 /**
  * COMPONENT
  */
 class Routes extends Component {
-  componentDidMount() {
-    this.props.loadInitialData()
-  }
+  // componentDidMount() {
+  //   this.props.loadInitialData()
+  // }
 
   render() {
-    const {isLoggedIn} = this.props
 
     return (
       <Switch>
-        {/* Routes placed here are available to all visitors */}
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/signup" component={Signup} />
         <Route exact path="/home" component={UserHome} />
         <Route exact path="/create" component={CreateFund} />
-        <Route exact path="/funds" component={FundsByCategory} />
-        <Route exact path="/funds/:fundId" component={SingleFund} />
-        <Route exact path="/donate" component={DonatePage} />
+        <Route exact path="/fund" component={AllFunds} />
+        <Route exact path="/fund/:fundId" component={SingleFund} />
+      
         <Route exact path="/Thanks" component={ThankPage} />
-
-        {isLoggedIn && (
-          <Switch>
-            {/* Routes placed here are only available after logging in */}
-            
-            <Route exact path="/create" component={createFund} />
-            <Redirect to= '/home' />
-          </Switch>
-        )}
-        {/* Displays our Login component as a fallback */}
-        <Route component={Login} />
       </Switch>
     )
   }
@@ -52,19 +42,21 @@ class Routes extends Component {
  * CONTAINER
  */
 const mapState = state => {
-  return {
-    // Being 'logged in' for our purposes will be defined has having a state.user that has a truthy id.
-    // Otherwise, state.user will be an empty object, and state.user.id will be falsey
-    isLoggedIn: !!state.user.id
-  }
+  // return {
+  //   // Being 'logged in' for our purposes will be defined has having a state.user that has a truthy id.
+  //   // Otherwise, state.user will be an empty object, and state.user.id will be falsey
+  //   isLoggedIn: !!state.user.id
+  // }
+  return {}
 }
 
 const mapDispatch = dispatch => {
-  return {
-    loadInitialData() {
-      dispatch(me())
-    }
-  }
+  // return {
+  //   loadInitialData() {
+  //     dispatch(me())
+  //   }
+  //}
+  return {}
 }
 
 // The `withRouter` wrapper makes sure that updates are not blocked
@@ -74,7 +66,7 @@ export default withRouter(connect(mapState, mapDispatch)(Routes))
 /**
  * PROP TYPES
  */
-Routes.propTypes = {
-  loadInitialData: PropTypes.func.isRequired,
-  isLoggedIn: PropTypes.bool.isRequired
-}
+// Routes.propTypes = {
+//   loadInitialData: PropTypes.func.isRequired,
+//   isLoggedIn: PropTypes.bool.isRequired
+// }

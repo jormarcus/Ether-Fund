@@ -24,12 +24,13 @@ export const fetchFunds = () => {
 
 export const fetchSingleFund = fundId => {
   return async dispatch => {
-    const res = await axios.get(`/api/${fundId}`);
+    const res = await axios.get(`/api/fund/${fundId}`);
     dispatch(getSingleFund(res.data));
   }
 }
 
 export const postFund = () => {
+  console.log('im working')
   return async dispatch => {
     const res = await axios.post('/api/fund');
     dispatch(addFund(res.data));
@@ -38,7 +39,7 @@ export const postFund = () => {
 
 export const editFundThunk = (fundId, fund) => {
   return async dispatch => {
-    const res = await axios.put(`/api/${fundId}`, fund);
+    const res = await axios.put(`/api/fund/${fundId}`, fund);
     dispatch(editFund(res.data));
   }
 }

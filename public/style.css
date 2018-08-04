@@ -15,7 +15,77 @@ nav a {
   margin: 1em;
 }
 
-form div {
+div {
+  display: block;
+}
+
+*, ::after, ::before {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+.nav-bar {
+  background: #fff;
+  box-shadow: 0 0.125rem 0.1875rem -0.125rem rgba(0,0,0,.2);
+  max-height: 120px;
+}
+
+/* form div {
   margin: 1em;
   display: inline-block;
+} */
+
+.card-image {
+  height:  300px;
+  width: 250px; 
+}
+
+.content-section {
+  padding: 2rem 1rem;
+  position: relative;
+}
+
+.center {
+  text-align: center;
+}
+
+.funds-top {
+  height: 200px;
+  display: block;
+  padding: 50px;
+}
+
+.align-center {
+  justify-content: center;
+}
+
+#funds-container {
+  margin-top: 10px;
+}
+
+.create-form {
+  background-color: #2185D0;
+  width: 40%;
+  margin-right: 30%;
+  margin-left: 30%;
+  margin-top: 15%;
+  border: 1px;
+}
+
+input[type="text"] {
+  width: 400px;
+}
+
+#desc-form {
+  width: 100px;
+}
+
+.form-container {
+  background-color: #2185D0;
+  margin: 15px;
+  padding: 30px;
+}
+
+.form-space {
+  padding-top: 15px;
 }

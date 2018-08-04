@@ -16,6 +16,10 @@ const Fund = db.define('funds', {
       isFloat: true
     }
   },
+  amountRecieved: {
+    type: Sequelize.FLOAT,
+    defaultValue: 0
+  },
   category: {
     type: Sequelize.STRING,
     defaultValue: 'Other'
